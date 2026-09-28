@@ -1,0 +1,20 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+package-lock.json
+dist/
+
+# Secrets - NEVER commit these
+.env
+.env.local
+
+# Generated at runtime
+generated_reports/
+response-agent/quarantine/
+response-agent/audit_log.jsonl
+*.docx
+*.pdf

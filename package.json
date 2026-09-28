@@ -1,0 +1,8 @@
+{
+  "name": "sentinel-ai-report-agent",
+  "version": "1.0.0",
+  "description": "Incident report renderer (docx) for Sentinel AI",
+  "dependencies": {
+    "docx": "^9.0.0"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "_comment": "Sample local hash database. In production, sync this from VirusTotal / MalwareBazaar / AbuseCH feeds on a schedule instead of hardcoding.",
+  "known_malicious_sha256": {
+    "275a021bbfb6489e54d471899f7db9d1663fc695ec2fe2a2c4538aabf651fd0f": "EICAR-TEST-FILE-STRING"
+  }
+}

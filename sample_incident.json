@@ -1,0 +1,51 @@
+{
+  "incident_id": "INC-2026-0142",
+  "detected_at": "2026-08-10T03:22:17Z",
+  "status": "Contained - Pending User Confirmation",
+  "risk_score": 95,
+  "user": {
+    "name": "Bharani M B",
+    "email": "b****@rgcet.ac.in",
+    "account_id": "usr_8841"
+  },
+  "login_attempt": {
+    "ip_address": "185.220.101.47",
+    "geo_location": "Moscow, Russia",
+    "device": "Chrome 128 / Windows 11",
+    "isp": "Unknown VPN/Proxy Provider"
+  },
+  "mitre_techniques": [
+    { "id": "T1110", "name": "Brute Force", "tactic": "Credential Access" },
+    { "id": "T1078", "name": "Valid Accounts", "tactic": "Defense Evasion" },
+    { "id": "T1621", "name": "Multi-Factor Authentication Request Generation", "tactic": "Credential Access" }
+  ],
+  "agent_findings": [
+    {
+      "agent": "Authentication Agent",
+      "finding": "Correct password entered but OTP not verified within 120s window. 3 login retries from same session.",
+      "confidence": 0.97
+    },
+    {
+      "agent": "Threat Intelligence Agent",
+      "finding": "Source IP 185.220.101.47 flagged on AbuseIPDB with 91% abuse confidence score, reported 214 times in past 90 days.",
+      "confidence": 0.91
+    },
+    {
+      "agent": "Endpoint Telemetry Agent",
+      "finding": "No anomalous local process activity detected on the registered device during the incident window.",
+      "confidence": 0.60
+    },
+    {
+      "agent": "Network Agent",
+      "finding": "Login origin geolocation (Moscow) inconsistent with user's baseline location (Puducherry, India) established over 60-day history.",
+      "confidence": 0.88
+    }
+  ],
+  "actions_taken": [
+    { "action": "Suspended active login session", "mode": "automatic", "timestamp": "2026-08-10T03:22:19Z" },
+    { "action": "Temporarily blocked source IP for 30 minutes", "mode": "automatic", "timestamp": "2026-08-10T03:22:20Z" },
+    { "action": "Sent push + email confirmation request to registered user", "mode": "automatic", "timestamp": "2026-08-10T03:22:21Z" },
+    { "action": "Force password reset", "mode": "pending_user_approval", "timestamp": null }
+  ],
+  "recommendation_hint": "Recommend permanent IP block and mandatory password reset if user denies the login attempt."
+}

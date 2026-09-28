@@ -1,0 +1,12 @@
+{
+  "_comment": "Sample process-name blocklist. Extend with names from real IOC feeds (AlienVault OTX, AbuseCH) for production use.",
+  "names": [
+    "xmrig.exe", "xmrig",
+    "mimikatz.exe", "mimikatz",
+    "cobaltstrike.exe",
+    "psexec64.exe",
+    "netcat.exe", "nc.exe",
+    "wannacry.exe",
+    "lockbit.exe"
+  ]
+}

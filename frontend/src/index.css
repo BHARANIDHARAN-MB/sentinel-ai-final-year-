@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #232E47 #0B0F19;
+}
+
+body {
+  background: #0B0F19;
+  color: #E4E7EC;
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+@keyframes sweep {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+.radar-sweep {
+  animation: sweep 4s linear infinite;
+  transform-origin: center;
+}
+
+@keyframes blip-pulse {
+  0%, 100% { opacity: 0.4; r: 3; }
+  50% { opacity: 1; r: 5; }
+}
+.blip {
+  animation: blip-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes ring-expand {
+  0% { r: 4; opacity: 0.8; }
+  100% { r: 40; opacity: 0; }
+}
+.ping-ring {
+  animation: ring-expand 3s ease-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .radar-sweep, .blip, .ping-ring {
+    animation: none !important;
+  }
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid #E8A33D;
+  outline-offset: 2px;
+}
